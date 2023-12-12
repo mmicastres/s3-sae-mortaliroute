@@ -1,1 +1,2 @@
-Api: /api/explore/v2.1/catalog/datasets/accidents-corporels-de-la-circulation-millesime/records?limit=20
+Api:
+https://public.opendatasoft.com/explore/dataset/accidents-corporels-de-la-circulation-millesime/api/?flg=fr-fr&disjunctive.com_name&disjunctive.dep_code&disjunctive.dep_name&disjunctive.epci_code&disjunctive.epci_name&disjunctive.reg_code&disjunctive.reg_name&disjunctive.com_code
