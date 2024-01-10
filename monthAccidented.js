@@ -33,7 +33,7 @@ const b = {
 };
 
 
-const c = new Chart(a,
+ new Chart(a,
     {
         type: "bar",
         data: b,
