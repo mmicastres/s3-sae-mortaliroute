@@ -55,14 +55,19 @@
 
         <h1>Hello, world!</h1>
         <h2>Total : <span id="total"></span></h2>
-    <form>
+    <form id="recherche">
       <label for="code">rechercher votre ville</label>
       <input type="text" id="ville" list="lst_hotel" size="40"
       placeholder="Entrez le nom de l'hotel" autocomplete="true"/>
       <datalist id="lst_hotel">
           
       </datalist>
-      <button id="bouton">rechercher</button>
+      <select name="annee" id="annee">
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+
+      </select>
+      <input type="submit" id="submit_recherche" class="btn btn-primary" value="Valider"   />
      </form>
 
      <div class="row col-12 m-5 justify-content-center">
