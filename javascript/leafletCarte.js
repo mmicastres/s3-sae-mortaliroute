@@ -132,4 +132,6 @@ function updateMap(accidents){
     map.setView([center.lat,center.lon], 13);
 
 }
+getAccidents("mirande",2018)
 
+var map = L.map('map').setView([51.505, -0.09], 13);
