@@ -33,3 +33,5 @@ function getAccidents(ville,annee, page){
     .catch((err) => console.log(err))
 }
 getAccidents("mirande",2018)
+
+var map = L.map('map').setView([51.505, -0.09], 13);
