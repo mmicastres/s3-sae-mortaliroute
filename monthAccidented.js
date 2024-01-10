@@ -1,9 +1,11 @@
 /*Classement des mois les plus accidentogènes en fonction de la ville*/
 
+document.getElementById('ville').addEventListener("keyup",monthAccidented);
 
 
 
-function monthAccidented(ville) {
+function monthAccidented(event) {
+    let ville = event.target.value
     let url =`https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/accidents-corporels-de-la-circulation-millesime/records?select=%20count(mois)%20&where=an%20%3D%20%222018%22%20and%20nom_com%3D%22${ville}%22&group_by=mois&order_by=%20%20count(mois)%20DESC&limit=53`
     url_encoded = encodeURI(url)
     console.log(url_encoded)
@@ -12,17 +14,12 @@ function monthAccidented(ville) {
         .then((data) => {
             console.log(data.total_count)
             console.log(data)
-            const list = data.results
+            let list = data.results
             return list
         })
         .catch((err) => console.log(err))
 
-
-
-}
-
-
-/*graphique à barre ChartJS
+      /*graphique à barre ChartJS
 *X mois 
 *Y nombre d'accident
 */
@@ -48,5 +45,11 @@ const b = {
         },
     }
 }
-});
+});  
+
+
+}
+
+
+
 
