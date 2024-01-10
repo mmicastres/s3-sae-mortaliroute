@@ -35,3 +35,6 @@ function getAccidents(ville,annee, page){
 getAccidents("mirande",2018)
 
 var map = L.map('map').setView([51.505, -0.09], 13);
+
+/*Classement des mois les plus accidentogènes en fonction de la ville*/
+
