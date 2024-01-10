@@ -28,8 +28,7 @@ function getAccidents(ville,annee, page){
     .then((data) => {
         console.log(data.total_count)
         const list = data.results
-        
-
+        return list
     })
     .catch((err) => console.log(err))
 }
