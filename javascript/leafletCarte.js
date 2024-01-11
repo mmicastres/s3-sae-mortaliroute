@@ -2,6 +2,7 @@
 const countTotal = document.getElementById("total");
 const submit_recherche = document.getElementById("submit_recherche");
 const recherche_form = document.getElementById("recherche");
+
 // Définition de la carte : 
 
 var map = L.map('map').setView([51.505, -0.09], 13);
@@ -134,4 +135,4 @@ function updateMap(accidents){
 }
 getAccidents("mirande",2018)
 
-var map = L.map('map').setView([51.505, -0.09], 13);
+// var map = L.map('map').setView([51.505, -0.09], 13); 
