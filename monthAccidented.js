@@ -2,32 +2,36 @@
 
 document.getElementById('submit_recherche').addEventListener("click", monthAccidented);
 let text = document.getElementById('ville');
+let select = document.getElementById('annee')
 let emplacement = document.getElementById('emplacement');
-const titreGraph = document.getElementById('titreGraph');
 
 
 
 function monthAccidented() {
 
+    let ville = text.value;
+    let an= select.value
+    // création de l'emplacement du graphique ChartJS
 
     emplacement.innerHTML = '<canvas id="graph"></canvas>';
-    let a = document.getElementById('graph')
-    janvier = []
-    fevrier = []
-    mars = []
-    avril = []
-    mai = []
-    juin = []
-    juillet = []
-    aout = []
-    septembre = []
-    octobre = []
-    novembre = []
-    decembre = []
+    let a = document.getElementById('graph');
 
-    let ville = text.value
+    janvier = [];
+    fevrier = [];
+    mars = [];
+    avril = [];
+    mai = [];
+    juin = [];
+    juillet = [];
+    aout = [];
+    septembre = [];
+    octobre = [];
+    novembre = [];
+    decembre = [];
 
-    let url = `https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/accidents-corporels-de-la-circulation-millesime/records?select=mois%20%2C%20nom_com%20%2Can&where=nom_com%20like%20%22${ville.toLowerCase()}%22%20and%20an%3D%222018%22%20&order_by=mois%20&limit=100`/**nombre de résultat limité*/
+
+    let url = `https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/accidents-corporels-de-la-circulation-millesime/records?select=mois%20%2C%20nom_com%20%2Can&where=nom_com%20like%20%22${ville.toLowerCase()}%22%20and%20an%3D%22${an}%22%20&order_by=mois%20&limit=100`;
+    /**nombre de résultat limité*/
     console.log(url)
 
     return fetch(url).then((response) => response.json()).then(
