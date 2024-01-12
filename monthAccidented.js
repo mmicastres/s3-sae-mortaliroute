@@ -1,6 +1,9 @@
 /*Classement des mois les plus accidentogènes en fonction de la ville*/
 
 document.getElementById('submit_recherche').addEventListener("click", monthAccidented);
+
+
+
 let text = document.getElementById('ville');
 let select = document.getElementById('annee')
 let emplacement = document.getElementById('emplacement');
@@ -8,6 +11,7 @@ let emplacement = document.getElementById('emplacement');
 
 
 function monthAccidented() {
+
 
     let ville = text.value;
     let an= select.value
