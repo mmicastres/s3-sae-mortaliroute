@@ -3,7 +3,9 @@ const countTotal = document.getElementById("total");
 const submit_recherche = document.getElementById("submit_recherche");
 const recherche_form = document.getElementById("recherche");
 const pie = document.getElementById("pie");
+const resumer = document.getElementById("resumer");
 // Définition de la carte : 
+
 
 
 
@@ -41,7 +43,7 @@ var pieChart = new Chart(pie, {
                 color: "black",  // not 'fontColor:' anymore
                 // fontSize: 18  // not 'fontSize:' anymore
                 font: {
-                  size: 14 // 'size' now within object 'font {}'
+                  size: 1 // 'size' now within object 'font {}'
                 }
               }
             }
@@ -98,13 +100,14 @@ async function getAccidents(ville,annee){
 
 let total,accidents 
 window.onload = async function() {
+    
     let ville = document.getElementById("ville").value;
     let annee = document.getElementById("annee").value;
     [total,accidents] = await getAccidents(ville,annee);
     console.log("C ICICICICIICCIIC : ",annee);
     totalTue = await getTotalTue(ville,annee);
     console.log(totalTue);
-    //alert(`Il y a eu ${totalTue} morts à ${ville} en ${annee} et ${totalTue/total}% des accidents ont été mortels.\n En tout, il y a eu ${total} accidents à ${ville} en ${annee}.`);
+    resumer.innerText = `Il y a eu ${totalTue} morts à ${ville} en ${annee} et ${totalTue/total}% des accidents ont été mortels.\n En tout, il y a eu ${total} accidents à ${ville} en ${annee}.`;
     // update pie
     pieChart.data.datasets[0].data = [totalTue, total-totalTue];
     pieChart.update();
@@ -121,6 +124,7 @@ recherche_form.addEventListener("submit", async function(event){
     console.log(ville,annee);
     [total,accidents] = await getAccidents(ville,annee)
     totalTue = await getTotalTue(ville,annee)
+    resumer.innerText = `Il y a eu ${totalTue} morts à ${ville} en ${annee} et ${totalTue/total}% des accidents ont été mortels.\n En tout, il y a eu ${total} accidents à ${ville} en ${annee}.`;
 
     pieChart.data.datasets[0].data = [totalTue, total-totalTue];
     pieChart.update();
@@ -184,9 +188,9 @@ function updateMap(accidents){
             marker.bindPopup(`<b>${accident.com_name}</b><br>${accident.adr}</br>${gravite_label}`)
         }
     }
+    if (!center) return 
     map.setView([center.lat,center.lon], 13);
 
 }
-getAccidents("mirande",2018)
 
 // var map = L.map('map').setView([51.505, -0.09], 13); 

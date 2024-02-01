@@ -26,25 +26,18 @@
 
       </div>
       </header>
-      <main>
+      <main >
         <div class="h-full d-flex flex-column">
 
 
-          <div class="d-flex jaune" id="content">
-            <div class="container col-7">
-              <h2>Carte</h2>
-            </div>
-            <div class="container">
-              <h2>Graphique</h2>
-            </div>
-  
-          </div>
 
 
-
-          <div class="d-flex flex-1">
-            <section class="black col-7 d-flex flex-column container m-0 py-3">
-  
+          <div class="d-flex flex-1"id="content">
+            <section class="black col-7 d-flex flex-column  m-0 pb-3">
+              <div class="jaune mb-3">
+                <h2>Carte</h2>
+              </div>
+              <div class="container">
               <div id="map" class="col-10 mx-auto "></div>
               <form id="recherche">
                 <div class="d-flex flex-column">
@@ -67,12 +60,23 @@
     
                 <input type="submit" id="submit_recherche" class="btn btn-primary" value="Valider"   />
                </form>
+              </div>
+
             </section>
-            <section class="container">
-    
-              <h2>Total : <span id="total"></span></h2>
-    
-              <canvas class="m-auto" id="pie"></canvas>
+            <section class=" d-flex flex-column justify-content-between">
+              <div class="jaune">
+                <h2>Graphique</h2>
+              </div>
+              <div class="container">
+
+                <div>
+                  <h2>Total : <span id="total"></span></h2>
+                  <span id="resumer"></span>
+                </div>
+      
+                <canvas class="m-auto" id="pie"></canvas>
+                <div></div>
+              </div>
             </section>
         </div>
         
