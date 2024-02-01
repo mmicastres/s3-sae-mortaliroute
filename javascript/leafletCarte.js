@@ -39,8 +39,7 @@ async function getAccidents(ville,annee){
     if (data.total_count > nb_par_pages){
         nb_pages = Math.ceil(max/nb_par_pages)
         console.log("nombre de pages : "+nb_pages);
-        for (let i = 0; i < nb_pages; i++) {
-            const page = i;
+        for (let page = 0; page < nb_pages; page++) {
             var req = `?where=com_name like "${ville}" or com_code like "${ville}" and an = ${annee} &limit=${nb_par_pages}`+`&offset=${nb_par_pages*page }`
             var url = endpoint + req
             url_encoded = encodeURI(url)
