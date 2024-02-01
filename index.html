@@ -16,6 +16,8 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   </head>
   <body>
+    
+    {# debut de la nav #}
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">MRoute</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,14 +53,20 @@
           </form>
         </div>
       </nav>
-      <main>
+      <div class="p-5 col-12">
+      {# fin de la nav #}
 
+      
+      <div class="col-12">
         <h1>Bienvenu sur MortaliRoute</h1>
         <h3 class="m-1">La plateforme répertoriant tous les accidents de la route en France en fonction de la ville de 2018 à 2019</h3>
-        <h2>Total : <span id="total"></span></h2>
+      </div>
+
+      <div class="col-12">
+    <h2>Total : <span id="total"></span></h2>
     <form id="recherche">
       <label for="code">rechercher votre ville</label>
-      <input type="text" id="ville" list="lst_hotel" size="40"
+      <input type="text" id="ville" list="lst_hotel" value="Castres" size="40"
       placeholder="Entrez le nom de l'hotel" autocomplete="true"/>
       <datalist id="lst_hotel">
           
@@ -70,17 +78,15 @@
       </select>
       <input type="submit" id="submit_recherche" class="btn btn-primary" value="Valider"   />
      </form>
-
+    </div>
      <div class="row col-12 m-5 justify-content-center">
     {# <div id="map" class="col-6 "></div> #}
-
-    </div>
 
   <div id="textGraph" class="col-12 d-flex justify-content-center"><h3>Nombre d'accident classé par mois</h3> <caption>(Valider votre recherche pour afficher les résultats)</caption></div>
     <div id='emplacement' class="row col-12  m-5 justify-content-center">
      
-
       
+    </div>
     </div>
     
     
