@@ -1,6 +1,5 @@
 /*Classement des mois les plus accidentogènes en fonction de la ville*/
-
-document.getElementById('submit_recherche').addEventListener("click", monthAccidented);
+window.addEventListener('scrollend', monthAccidented);
 
 
 
