@@ -104,7 +104,7 @@ window.onload = async function() {
     console.log("C ICICICICIICCIIC : ",annee);
     totalTue = await getTotalTue(ville,annee);
     console.log(totalTue);
-    alert(`Il y a eu ${totalTue} morts à ${ville} en ${annee} et ${totalTue/total}% des accidents ont été mortels.\n En tout, il y a eu ${total} accidents à ${ville} en ${annee}.`);
+    //alert(`Il y a eu ${totalTue} morts à ${ville} en ${annee} et ${totalTue/total}% des accidents ont été mortels.\n En tout, il y a eu ${total} accidents à ${ville} en ${annee}.`);
     // update pie
     pieChart.data.datasets[0].data = [totalTue, total-totalTue];
     pieChart.update();
