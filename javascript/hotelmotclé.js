@@ -38,7 +38,13 @@ function rechercheville(event) {
     // Vérifie si la valeur n'est pas vide
     if (valeur.trim() !== "") {
         // Construit l'URL pour la requête API en utilisant la valeur
-        const url = `https://geo.api.gouv.fr/communes?nom=${valeur}`;
+        const url = `https://geo.api.gouv.fr/communes?nom=${valeur}&fields=nom,code,codesPostaux,departement`;
+
+        //if (codePostal !== "") {
+        //    url += `&codePostal=${codePostal}`;
+        //}
+
+        //url += "&fields=nom,code,codesPostaux,departement";
 
         // Options pour la requête HTTP GET
         let options = {method: 'GET'};
@@ -53,7 +59,7 @@ function rechercheville(event) {
                 // Crée une chaîne de texte pour afficher les résultats
                 let listeOptions = '';
                 for (let hotel of data) {
-                    listeOptions += `<option value="${hotel.nom}"></option>`;
+                    listeOptions += `<option value="${hotel.codesPostaux}">${hotel.nom}</option>`;
                 }
 
                 // Met à jour l'élément avec l'ID "lst_hotel" avec la liste d'options
