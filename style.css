@@ -1,1 +1,11 @@
 #map { height: 640px; }
+
+#photo{
+    background-image: url(/icons/cercle-jaune-vue-dessus-fond-blanc.jpg);
+    background-position:center ;
+    background-repeat: repeat;
+    background-size: contain;
+}
+nav{
+    background-color: rgb(255,216, 1);
+}
