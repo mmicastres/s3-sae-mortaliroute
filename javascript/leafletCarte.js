@@ -70,7 +70,7 @@ nb_par_pages = 100;
 
 async function getAccidents(ville,annee){
     var accidents = []
-    var req = `?where=(com_name like "${ville}" or com_code like "${ville}") and an="${annee}" &limit=${nb_par_pages}`
+    var req = `?where=(com_name like "${ville}" or code_postal like "${ville}") and an="${annee}" &limit=${nb_par_pages}`
     var url = endpoint + req
     url_encoded = encodeURI(url)
     console.log(url_encoded);
@@ -107,7 +107,7 @@ window.onload = async function() {
     console.log("C ICICICICIICCIIC : ",annee);
     totalTue = await getTotalTue(ville,annee);
     console.log(totalTue);
-    resumer.innerText = `Il y a eu ${totalTue} morts à ${ville} en ${annee} et ${totalTue/total}% des accidents ont été mortels.\n En tout, il y a eu ${total} accidents à ${ville} en ${annee}.`;
+    resumer.innerText = `Il y a eu ${totalTue} morts à ${ville} en ${annee} et ${Math.floor(totalTue/total*100)}% des accidents ont été mortels.\n En tout, il y a eu ${total} accidents à ${ville} en ${annee}.`;
     // update pie
     pieChart.data.datasets[0].data = [totalTue, total-totalTue];
     pieChart.update();
@@ -124,7 +124,7 @@ recherche_form.addEventListener("submit", async function(event){
     console.log(ville,annee);
     [total,accidents] = await getAccidents(ville,annee)
     totalTue = await getTotalTue(ville,annee)
-    resumer.innerText = `Il y a eu ${totalTue} morts à ${ville} en ${annee} et ${totalTue/total}% des accidents ont été mortels.\n En tout, il y a eu ${total} accidents à ${ville} en ${annee}.`;
+    resumer.innerText = `Il y a eu ${totalTue} morts à ${ville} en ${annee} et ${Math.floor(totalTue/total*100)}% des accidents ont été mortels.\n En tout, il y a eu ${total} accidents à ${ville} en ${annee}.`;
 
     pieChart.data.datasets[0].data = [totalTue, total-totalTue];
     pieChart.update();

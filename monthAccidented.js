@@ -90,7 +90,7 @@ async function monthAccidented(annee, ville,mort=0) {
             mois="0" + mois
         }
         console.log(mois);
-        var req = `?where=(com_name like "${ville}" or com_code like "${ville}") and (an="${annee}" and mois="${mois}") and ${mort?'':'not'} ("Tué" in grav)  &limit=1`
+        var req = `?where=(com_name like "${ville}" or code_postal like "${ville}") and (an="${annee}" and mois="${mois}") and ${mort?'':'not'} ("Tué" in grav)  &limit=1`
         var url = endpoint + req
         url_encoded = encodeURI(url)
         
@@ -114,7 +114,7 @@ async function monthAccidented(annee, ville,mort=0) {
 
 async function getTotalTue(ville,annee){
     console.log(annee);
-    var req = `?where=(com_name like "${ville}" or com_code like "${ville}") and an="${annee}" and "Tué" in grav &limit=1`
+    var req = `?where=(com_name like "${ville}" or code_postal like "${ville}") and an="${annee}" and "Tué" in grav &limit=1`
     var url = endpoint + req
     url_encoded = encodeURI(url)
     console.log(url_encoded);
