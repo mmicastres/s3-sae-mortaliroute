@@ -43,7 +43,7 @@ var pieChart = new Chart(pie, {
                 color: "black",  // not 'fontColor:' anymore
                 // fontSize: 18  // not 'fontSize:' anymore
                 font: {
-                  size: 1 // 'size' now within object 'font {}'
+                  size: 14 // 'size' now within object 'font {}'
                 }
               }
             }
